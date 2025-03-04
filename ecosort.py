@@ -22,6 +22,7 @@ def install(package):
 
 # List of required packages
 required_packages = [
+    "flask",
     "torch",
     "torchvision",
     "Pillow",
@@ -61,11 +62,11 @@ try:
     model = models.resnet50(weights=None)
     num_ftrs = model.fc.in_features
     model.fc = nn.Linear(num_ftrs, num_classes)
-    model.load_state_dict(th.load("garbage_classification_modelL2ES.pth", map_location=device))
+    model.load_state_dict(th.load("garbage_classification_model.pth", map_location=device))
     model.to(device)
     model.eval()
 except FileNotFoundError:
-    print("❌ Error: Model file not found. Please ensure 'garbage_classification_modelL2ES.pth' is in the current directory.")
+    print("❌ Error: Model file not found. Please ensure 'garbage_classification_model.pth' is in the current directory.")
     sys.exit(1)
 except Exception as e:
     print(f"❌ Error loading model: {e}")
