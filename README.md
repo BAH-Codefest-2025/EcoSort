@@ -44,7 +44,7 @@ To classify images in a directory and display predictions via the GUI, run:
 
 To process images without the GUI and save predictions to text and CSV files, run:
 ```
-    ecosort.py --dir /dir/name/here --output /your/output/directory/path/here
+    python ecosort.py --dir /dir/name/here --output /your/output/directory/path/here
 ```
 
 This will generate .txt and .csv files containing image names and their predicted classifications.
